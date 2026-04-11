@@ -1,0 +1,154 @@
+{
+  "domainStrategy": "IPIfNonMatch",
+  "rules": [
+    {
+      "outboundTag": "direct",
+      "domain": [
+        "geosite:private"
+      ],
+      "enabled": true,
+      "remarks": "Приватные домены"
+    },
+    {
+      "outboundTag": "direct",
+      "ip": [
+        "geoip:private"
+      ],
+      "enabled": true,
+      "remarks": "Приватные сети"
+    },
+    {
+      "outboundTag": "block",
+      "domain": [
+        "geosite:category-ads-all"
+      ],
+      "enabled": true,
+      "remarks": "No ads"
+    },
+    {
+      "outboundTag": "direct",
+      "protocol": [
+        "bittorrent"
+      ],
+      "enabled": true,
+      "remarks": "Torrent -> Direct"
+    },
+    {
+      "outboundTag": "direct",
+      "domain": [
+        "geosite:ru-available-only-inside"
+      ],
+      "enabled": true,
+      "remarks": "Русские сервисы -> Direct"
+    },
+    {
+      "outboundTag": "proxy",
+      "ip": [
+        "1.0.0.1",
+        "1.1.1.1",
+        "8.8.8.8",
+        "8.8.4.4"
+      ],
+      "enabled": true,
+      "remarks": "DNS в прокси"
+    },
+    {
+      "network": "tcp,udp",
+      "outboundTag": "proxy",
+      "ip": [
+        "geoip:telegram"
+      ],
+      "domain": [
+        "geosite:telegram"
+      ],
+      "enabled": true,
+      "remarks": "Telegram -> Proxy"
+    },
+    {
+      "outboundTag": "proxy",
+      "domain": [
+        "developers.google.com",
+        "alkalimakersuite-pa.clients6.google.com",
+        "geosite:notion",
+
+        "plugins.jetbrains.com",
+        "download.jetbrains.com",
+        "download-cf.jetbrains.com",
+        "intellij.com",
+        "intellij.net",
+        "intellij.org",
+        "jetbrains.com",
+        "jetbrains.net",
+        "jetbrains.space",
+        "jetbrains.team",
+        "datalore.io",
+        "kotlinlang.org",
+        "cdn.jetbrains.com",
+        "download-cdn.jetbrains.com.cn",
+        "jb.gg",
+        "youtrack.cloud",
+        "geosite:jetbrains",
+
+        "full:ai.google.dev",
+        "full:alkalicore-pa.clients6.google.com",
+        "full:alkalimakersuite-pa.clients6.google.com",
+        "full:webchannel-alkalimakersuite-pa.clients6.google.com",
+        "generativeai.google",
+        "makersuite.google.com",
+        "ai.studio",
+
+        "domain:perplexity.ai",
+
+        "geosite:ru-blocked"
+      ],
+      "enabled": true,
+      "remarks": "Не любят русских, заблочено РКН + Perplexity -> Proxy"
+    },
+    {
+      "outboundTag": "proxy",
+      "ip": [
+        "91.108.12.0/22",
+        "91.108.20.0/22",
+        "geoip:ru-blocked",
+        "geoip:re-filter"
+      ],
+      "enabled": true,
+      "remarks": "Заблокированные IP в прокси"
+    },
+    {
+      "outboundTag": "proxy",
+      "domain": [
+        "geosite:discord",
+        "discord.media",
+        "discordapp.net",
+        "regexp:^rtc[0-9-]+\\.discord\\.gg$"
+      ],
+      "enabled": true,
+      "remarks": "Discord -> Proxy (Для ноута)"
+    },
+    {
+      "outboundTag": "proxy",
+      "port": "50000-65535",
+      "network": "udp",
+      "enabled": true,
+      "remarks": "Discord (voice) -> Proxy (Для ноута)"
+    },
+    {
+      "outboundTag": "direct",
+      "domain": [
+        "geosite:discord",
+        "discord.media",
+        "discordapp.net",
+        "regexp:^rtc[0-9-]+\\.discord\\.gg$"
+      ],
+      "enabled": false,
+      "remarks": "Discord -> Direct"
+    },
+    {
+      "port": "0-65535",
+      "outboundTag": "direct",
+      "enabled": true,
+      "remarks": "Остальное напрямую"
+    }
+  ]
+}
