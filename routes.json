@@ -130,24 +130,6 @@
     "remarks": "Заблокированные IP в прокси"
   },
   {
-    "outboundTag": "proxy",
-    "domain": [
-      "geosite:discord",
-      "discord.media",
-      "discordapp.net",
-      "regexp:^rtc[0-9-]+\\.discord\\.gg$"
-    ],
-    "enabled": true,
-    "remarks": "Discord -> Proxy"
-  },
-  {
-    "outboundTag": "proxy",
-    "port": "50000-65535",
-    "network": "udp",
-    "enabled": true,
-    "remarks": "Discord (voice) -> Proxy"
-  },
-  {
     "port": "0-65535",
     "outboundTag": "direct",
     "enabled": true,
