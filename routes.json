@@ -85,18 +85,6 @@
     "remarks": "DNS в прокси"
   },
   {
-    "network": "tcp,udp",
-    "outboundTag": "proxy",
-    "ip": [
-      "geoip:telegram"
-    ],
-    "domain": [
-      "geosite:telegram"
-    ],
-    "enabled": true,
-    "remarks": "Telegram -> Proxy"
-  },
-  {
     "outboundTag": "proxy",
     "domain": [
       "developers.google.com",
@@ -135,8 +123,6 @@
   {
     "outboundTag": "proxy",
     "ip": [
-      "91.108.12.0/22",
-      "91.108.20.0/22",
       "geoip:ru-blocked",
       "geoip:re-filter"
     ],
