@@ -152,14 +152,14 @@
       "regexp:^rtc[0-9-]+\\.discord\\.gg$"
     ],
     "enabled": true,
-    "remarks": "Discord -> Proxy (Для ноута)"
+    "remarks": "Discord -> Proxy"
   },
   {
     "outboundTag": "proxy",
     "port": "50000-65535",
     "network": "udp",
     "enabled": true,
-    "remarks": "Discord (voice) -> Proxy (Для ноута)"
+    "remarks": "Discord (voice) -> Proxy"
   },
   {
     "port": "0-65535",
