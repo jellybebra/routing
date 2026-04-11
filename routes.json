@@ -1,177 +1,171 @@
-{
-  "domainStrategy": "IPIfNonMatch",
-  "rules": [
-    {
-      "outboundTag": "direct",
-      "domain": [
-        "geosite:private"
-      ],
-      "enabled": true,
-      "remarks": "Приватные домены"
-    },
-    {
-      "outboundTag": "direct",
-      "ip": [
-        "geoip:private"
-      ],
-      "enabled": true,
-      "remarks": "Приватные сети"
-    },
-    {
-      "outboundTag": "block",
-      "domain": [
-        "geosite:category-ads-all"
-      ],
-      "enabled": true,
-      "remarks": "No ads"
-    },
-    {
-      "outboundTag": "direct",
-      "protocol": [
-        "bittorrent"
-      ],
-      "enabled": true,
-      "remarks": "Torrent -> Direct"
-    },
-    {
-      "outboundTag": "direct",
-      "domain": [
-        "geosite:ru-available-only-inside"
-      ],
-      "enabled": true,
-      "remarks": "Русские сервисы -> Direct"
-    },
-    {
-      "outboundTag": "direct",
-      "domain": [
-        "geosite:discord",
-        "discord.media",
-        "discordapp.net",
-        "regexp:^rtc[0-9-]+\\.discord\\.gg$"
-      ],
-      "enabled": false,
-      "remarks": "Discord -> Direct"
-    },
-    {
-      "outboundTag": "direct",
-      "domain": [
-        "domain:youtube.com",
-        "domain:youtu.be",
-        "domain:youtube-nocookie.com",
-        "domain:youtubekids.com",
-        "domain:googlevideo.com",
-        "domain:youtubei.googleapis.com",
-        "domain:youtubeembeddedplayer.googleapis.com",
-        "domain:ytimg.com",
-        "domain:ytimg.l.google.com",
-        "domain:yt3.ggpht.com",
-        "domain:yt4.ggpht.com",
-        "domain:yt3.googleusercontent.com",
-        "domain:wide-youtube.l.google.com",
-        "domain:youtube-ui.l.google.com",
-        "domain:yt-video-upload.l.google.com",
-        "domain:jnn-pa.googleapis.com"
-      ],
-      "enabled": false,
-      "remarks": "YouTube -> Direct (для компа с zapret)"
-    },
-    {
-      "outboundTag": "proxy",
-      "ip": [
-        "1.0.0.1",
-        "1.1.1.1",
-        "8.8.8.8",
-        "8.8.4.4"
-      ],
-      "enabled": true,
-      "remarks": "DNS в прокси"
-    },
-    {
-      "network": "tcp,udp",
-      "outboundTag": "proxy",
-      "ip": [
-        "geoip:telegram"
-      ],
-      "domain": [
-        "geosite:telegram"
-      ],
-      "enabled": true,
-      "remarks": "Telegram -> Proxy"
-    },
-    {
-      "outboundTag": "proxy",
-      "domain": [
-        "developers.google.com",
-        "alkalimakersuite-pa.clients6.google.com",
-        "geosite:notion",
+[
+  {
+    "outboundTag": "direct",
+    "domain": [
+      "geosite:private"
+    ],
+    "enabled": true,
+    "remarks": "Приватные домены"
+  },
+  {
+    "outboundTag": "direct",
+    "ip": [
+      "geoip:private"
+    ],
+    "enabled": true,
+    "remarks": "Приватные сети"
+  },
+  {
+    "outboundTag": "block",
+    "domain": [
+      "geosite:category-ads-all"
+    ],
+    "enabled": true,
+    "remarks": "No ads"
+  },
+  {
+    "outboundTag": "direct",
+    "protocol": [
+      "bittorrent"
+    ],
+    "enabled": true,
+    "remarks": "Torrent -> Direct"
+  },
+  {
+    "outboundTag": "direct",
+    "domain": [
+      "geosite:ru-available-only-inside"
+    ],
+    "enabled": true,
+    "remarks": "Русские сервисы -> Direct"
+  },
+  {
+    "outboundTag": "direct",
+    "domain": [
+      "geosite:discord",
+      "discord.media",
+      "discordapp.net",
+      "regexp:^rtc[0-9-]+\\.discord\\.gg$"
+    ],
+    "enabled": false,
+    "remarks": "Discord -> Direct"
+  },
+  {
+    "outboundTag": "direct",
+    "domain": [
+      "domain:youtube.com",
+      "domain:youtu.be",
+      "domain:youtube-nocookie.com",
+      "domain:youtubekids.com",
+      "domain:googlevideo.com",
+      "domain:youtubei.googleapis.com",
+      "domain:youtubeembeddedplayer.googleapis.com",
+      "domain:ytimg.com",
+      "domain:ytimg.l.google.com",
+      "domain:yt3.ggpht.com",
+      "domain:yt4.ggpht.com",
+      "domain:yt3.googleusercontent.com",
+      "domain:wide-youtube.l.google.com",
+      "domain:youtube-ui.l.google.com",
+      "domain:yt-video-upload.l.google.com",
+      "domain:jnn-pa.googleapis.com"
+    ],
+    "enabled": false,
+    "remarks": "YouTube -> Direct (для компа с zapret)"
+  },
+  {
+    "outboundTag": "proxy",
+    "ip": [
+      "1.0.0.1",
+      "1.1.1.1",
+      "8.8.8.8",
+      "8.8.4.4"
+    ],
+    "enabled": true,
+    "remarks": "DNS в прокси"
+  },
+  {
+    "network": "tcp,udp",
+    "outboundTag": "proxy",
+    "ip": [
+      "geoip:telegram"
+    ],
+    "domain": [
+      "geosite:telegram"
+    ],
+    "enabled": true,
+    "remarks": "Telegram -> Proxy"
+  },
+  {
+    "outboundTag": "proxy",
+    "domain": [
+      "developers.google.com",
+      "alkalimakersuite-pa.clients6.google.com",
+      "geosite:notion",
+      "plugins.jetbrains.com",
+      "download.jetbrains.com",
+      "download-cf.jetbrains.com",
+      "intellij.com",
+      "intellij.net",
+      "intellij.org",
+      "jetbrains.com",
+      "jetbrains.net",
+      "jetbrains.space",
+      "jetbrains.team",
+      "datalore.io",
+      "kotlinlang.org",
+      "cdn.jetbrains.com",
+      "download-cdn.jetbrains.com.cn",
+      "jb.gg",
+      "youtrack.cloud",
+      "geosite:jetbrains",
+      "full:ai.google.dev",
+      "full:alkalicore-pa.clients6.google.com",
+      "full:alkalimakersuite-pa.clients6.google.com",
+      "full:webchannel-alkalimakersuite-pa.clients6.google.com",
+      "generativeai.google",
+      "makersuite.google.com",
+      "ai.studio",
+      "domain:perplexity.ai",
+      "geosite:ru-blocked"
+    ],
+    "enabled": true,
+    "remarks": "Не любят русских, заблочено РКН + Perplexity -> Proxy"
+  },
+  {
+    "outboundTag": "proxy",
+    "ip": [
+      "91.108.12.0/22",
+      "91.108.20.0/22",
+      "geoip:ru-blocked",
+      "geoip:re-filter"
+    ],
+    "enabled": true,
+    "remarks": "Заблокированные IP в прокси"
+  },
+  {
+    "outboundTag": "proxy",
+    "domain": [
+      "geosite:discord",
+      "discord.media",
+      "discordapp.net",
+      "regexp:^rtc[0-9-]+\\.discord\\.gg$"
+    ],
+    "enabled": true,
+    "remarks": "Discord -> Proxy (Для ноута)"
+  },
+  {
+    "outboundTag": "proxy",
+    "port": "50000-65535",
+    "network": "udp",
+    "enabled": true,
+    "remarks": "Discord (voice) -> Proxy (Для ноута)"
+  },
+  {
+    "port": "0-65535",
+    "outboundTag": "direct",
+    "enabled": true,
+    "remarks": "Остальное напрямую"
+  }
+]
 
-        "plugins.jetbrains.com",
-        "download.jetbrains.com",
-        "download-cf.jetbrains.com",
-        "intellij.com",
-        "intellij.net",
-        "intellij.org",
-        "jetbrains.com",
-        "jetbrains.net",
-        "jetbrains.space",
-        "jetbrains.team",
-        "datalore.io",
-        "kotlinlang.org",
-        "cdn.jetbrains.com",
-        "download-cdn.jetbrains.com.cn",
-        "jb.gg",
-        "youtrack.cloud",
-        "geosite:jetbrains",
-
-        "full:ai.google.dev",
-        "full:alkalicore-pa.clients6.google.com",
-        "full:alkalimakersuite-pa.clients6.google.com",
-        "full:webchannel-alkalimakersuite-pa.clients6.google.com",
-        "generativeai.google",
-        "makersuite.google.com",
-        "ai.studio",
-
-        "domain:perplexity.ai",
-
-        "geosite:ru-blocked"
-      ],
-      "enabled": true,
-      "remarks": "Не любят русских, заблочено РКН + Perplexity -> Proxy"
-    },
-    {
-      "outboundTag": "proxy",
-      "ip": [
-        "91.108.12.0/22",
-        "91.108.20.0/22",
-        "geoip:ru-blocked",
-        "geoip:re-filter"
-      ],
-      "enabled": true,
-      "remarks": "Заблокированные IP в прокси"
-    },
-    {
-      "outboundTag": "proxy",
-      "domain": [
-        "geosite:discord",
-        "discord.media",
-        "discordapp.net",
-        "regexp:^rtc[0-9-]+\\.discord\\.gg$"
-      ],
-      "enabled": true,
-      "remarks": "Discord -> Proxy (Для ноута)"
-    },
-    {
-      "outboundTag": "proxy",
-      "port": "50000-65535",
-      "network": "udp",
-      "enabled": true,
-      "remarks": "Discord (voice) -> Proxy (Для ноута)"
-    },
-    {
-      "port": "0-65535",
-      "outboundTag": "direct",
-      "enabled": true,
-      "remarks": "Остальное напрямую"
-    }
-  ]
-}
