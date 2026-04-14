@@ -87,6 +87,14 @@
   {
     "outboundTag": "proxy",
     "domain": [
+      "geosite:google"
+    ],
+    "enabled": true,
+    "remarks": "Google -> Proxy"
+  },
+  {
+    "outboundTag": "proxy",
+    "domain": [
       "developers.google.com",
       "alkalimakersuite-pa.clients6.google.com",
       "geosite:notion",
@@ -118,7 +126,7 @@
       "geosite:ru-blocked"
     ],
     "enabled": true,
-    "remarks": "Не любят русских, заблочено РКН + Perplexity -> Proxy"
+    "remarks": "Сайт не работает в РФ -> Proxy"
   },
   {
     "outboundTag": "proxy",
